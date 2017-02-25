@@ -1,0 +1,12 @@
+<div class="content">
+<% user = User.find(session[:user_id])  %>
+<div class="head">
+    <%= link_to image_tag("logo.png", :border => 0), "/", id: "logo" %>
+    <%= link_to image_tag("logout.png", :border => 0), logout_path, :method => :delete, id: "logout" %>
+</div>
+<div class="title">
+<h2>Здравствуйте,
+<%= user.fio %>! (Администратор)</h2>
+</div>
+</div>
+

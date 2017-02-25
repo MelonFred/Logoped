@@ -1,0 +1,14 @@
+<div class="head">
+    <%= link_to image_tag("logo.png", :border => 0), "/", id: "logo_no_out" %>
+</div>
+<div class="content_login">
+<div class="login_block">
+<%= form_for :user, url: {action: "login"}, html: {id: "login_form"} do |f|%>
+    <h2>Выполните вход:</h2>
+    <%= f.text_field(:login) %><br>
+    <%= f.password_field(:password) %><br>
+    <%= f.submit("ВОЙТИ", id: "submit") %>
+<% end %>
+</div>
+</div>
+

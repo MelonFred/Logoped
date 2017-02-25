@@ -1,0 +1,11 @@
+<div class="task_block">
+<h2>А вот и ваши задания:</h2>
+<% @user.tasks.each { |value| %>
+    <%= form_tag url_for(controller: "client_page", action: "task", id: value.id), method: "put", id: "form_id" do %>
+    <div class="task" id="task">
+        <p class="task_title"><%= value.title %></p>
+        <p class="task_date"><%= value.created_at.to_s[0,10] %></p>
+    </div>         
+    <% end %>
+<% } %>
+</div>
