@@ -13,20 +13,18 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: root
-  password: QwErTyUiO789
-  host: localhost
+  username: b3ad1e4efe6bc9
+  password: 46cec8fa
+  host: eu-cdbr-west-01.cleardb.com
 
 development:
   <<: *default
-  database: Logoped_development
+  database: heroku_c47e41fa100bdaa
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
-  <<: *default
-  database: Logoped_test
+
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -47,8 +45,4 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: Logoped_production
-  username: Logoped
-  password: <%= ENV['LOGOPED_DATABASE_PASSWORD'] %>
+
