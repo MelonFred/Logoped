@@ -45,4 +45,9 @@ development:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-
+production:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
+  database: heroku_c47e41fa100bdaa
+  username: b3ad1e4efe6bc9
+  password: 46cec8fa
