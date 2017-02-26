@@ -3,8 +3,8 @@
 <% @user.tasks.each { |value| %>
     <%= form_tag url_for(controller: "client_page", action: "task", id: value.id), method: "put", id: "form_id" do %>
     <div class="task" id="task">
-        <% if value.title.size > 45 %>
-            <p class="task_title"><%= value.title[0,45] %>...</p>
+        <% if value.title.size > 40 %>
+            <p class="task_title"><%= value.title[0,40] %>...</p>
         <% else %>
             <p class="task_title"><%= value.title %></p>
         <% end %>
