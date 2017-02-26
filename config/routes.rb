@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   match '/task', :via => [:POST], :to => "client_page#task"
   match '/add_user', :via => [:GET], :to => "admin_page#add_user"
   match '/user', :via => [:POST], :to => "admin_page#user"
+  match '/add', :via => [:POST], :to => "admin_page#add"
 
   root to: "home_page#index"
 

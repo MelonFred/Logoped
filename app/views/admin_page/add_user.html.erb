@@ -1,12 +1,24 @@
 <div class="content">
-<% @user = @users.find(session[:user_id])  %>
+<% @current_user = @users.find(session[:user_id])  %>
 <div class="head">
     <%= link_to image_tag("logo.png", :border => 0), "/", id: "logo" %>
     <%= link_to image_tag("logout.png", :border => 0), logout_path, :method => :delete, id: "logout" %>
 </div>
 <div class="title">
 <h2>Здравствуйте,
-<%= @user.fio %>! (Администратор)</h2>
+<%= @current_user.fio %>! (Администратор)</h2>
+</div>
+<div class="user_block">
+<%= form_for :user, url: {action: "add"}, html: {id: "add_user_form"} do |f|%>
+    <h2>Данные пользователя:</h2>
+    <%= label_tag("Введите ФИО") %><br>
+    <%= f.text_field(:fio) %><br>
+    <%= label_tag("Введите Логин") %><br>
+    <%= f.text_field(:login) %><br>
+    <%= label_tag("Введите Пароль") %><br>
+    <%= f.text_field(:password) %><br>
+    <%= f.submit("ДОБАВИТЬ", id: "submit") %>
+<% end %>
 </div>
 </div>
 

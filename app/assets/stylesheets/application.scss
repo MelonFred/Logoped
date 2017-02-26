@@ -86,6 +86,24 @@ body {
     background-color: #fff;
 }
 
+#add_user_form {
+    padding: 10px;
+    background: #fff;
+    border-radius: 5px;
+    max-width: 400px;
+    margin: auto; 
+    margin-top: 25px;
+}
+
+#add_user_form #submit {
+    background-color: #4db0a5;
+    border: none;
+    color: #fff;  
+    margin: 15px auto;
+    max-width: 100px; 
+    padding: 10px;
+}
+
 .task_title {
     float: left;
     max-width: 500px;
@@ -162,7 +180,7 @@ body {
     border-radius: 5px;
 }
 
-#submit {
+#login_form #submit {
     background-color: #4db0a5;
     border: none;
     color: #fff;  

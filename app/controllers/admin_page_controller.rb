@@ -6,6 +6,9 @@ class AdminPageController < ApplicationController
     def user
     end
 
+    def add
+    end
+
     def add_user
         @users = User.all
     end
