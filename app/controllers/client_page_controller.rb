@@ -13,7 +13,9 @@ class ClientPageController < ApplicationController
     end
 
     def back
-        session[:task_id].clear
+        if session[:task_id]
+            session[:task_id].clear
+        end
         redirect_to "/"
     end
 
