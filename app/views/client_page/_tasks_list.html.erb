@@ -3,7 +3,7 @@
 <% @user.tasks.each { |value| %>
     <%= form_tag url_for(controller: "client_page", action: "task", id: value.id), method: "put", id: "form_id" do %>
     <div class="task" id="task">
-        <p class="task_title"><%= value.title.to_s[0,20] %></p>
+        <p class="task_title"><%= value.title.to_s[0,30] %></p>
         <p class="task_date"><%= value.created_at.to_s[0,10] %></p>
     </div>         
     <% end %>
