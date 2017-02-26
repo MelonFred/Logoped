@@ -3,11 +3,6 @@ users:
    login: 'admin'
    password: 'admin'
    fio: 'Иванова Лидия Михайловна'
-   tasks:
-    - title: 'Ничего'
-      date: 27.12.2011
-      text: 'Ничего'
-      img: 'Ничего'
  - permission: 'client'
    login: 'first'
    password: '12345'
