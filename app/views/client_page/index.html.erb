@@ -7,6 +7,10 @@
 <div class="title">
 <h2>Здравствуйте, <%= @user.fio %>!</h2>
 </div>
+<% if @user.tasks.size > 0 %>
 <%= render 'client_page/tasks_list' %>
+<% else %>
+<h3>УПС... Тут пока что ничего нет =( </h3>
+<% end %>
 </div>
 
