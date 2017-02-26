@@ -104,6 +104,13 @@ body {
     padding: 10px;
 }
 
+#add_user_form #user_fio, #user_login, #user_password {
+    height: 30px;
+    width: 190px;  
+    margin: 10px;
+    border-radius: 2px;      
+}
+
 .task_title {
     float: left;
     max-width: 500px;
