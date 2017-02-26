@@ -1,6 +1,6 @@
 <div class="task_block">
-<h2>А вот и ваши задания:</h2>
-<% @user.tasks.each { |value| %>
+<h2>Список заданий:</h2>
+<% @current_user.tasks.each { |value| %>
     <%= form_tag url_for(controller: "client_page", action: "task", id: value.id), method: "get", id: "form_id" do %>
     <div class="task" id="task">
         <% if value.title.size > 40 %>

@@ -1,9 +1,10 @@
 class AdminPageController < ApplicationController
     def index
-        @users = User.includes(:tasks)
+        @users = User.all
     end
 
     def user
+        @users = User.includes(:tasks)
         @current_user = User.find(param_id)
     end
 
