@@ -11,7 +11,7 @@
 </div>
 <div class="user_block">
 <%= form_for :user, url: {action: "add"}, html: {id: "add_user_form"} do |f|%>
-    <h2>Данные пользователя:</h2>
+    <h2>Добавить пользователя:</h2>
     <%= label_tag("Введите ФИО") %><br>
     <%= f.text_field(:fio) %><br>
     <%= label_tag("Введите Логин") %><br>
