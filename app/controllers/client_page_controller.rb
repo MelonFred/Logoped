@@ -11,10 +11,6 @@ class ClientPageController < ApplicationController
     def tasks_list
     end
 
-    def back
-        redirect_to "/"
-    end
-
     private
     def par_task
         params[:id]
