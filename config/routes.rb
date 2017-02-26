@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   
   match '/logout', :via => [:DELETE], :to => "home_page#logout"
   match '/back', :via => [:DELETE], :to => "client_page#back"
-  match '/task', :via => [:PUT], :to => "client_page#task"
+  match '/task', :via => [:POST], :to => "client_page#task"
+  match '/add_user', :via => [:GET], :to => "admin_page#add_user"
+  match '/user', :via => [:POST], :to => "admin_page#user"
 
   root to: "home_page#index"
 
