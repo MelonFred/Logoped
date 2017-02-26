@@ -13,6 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+@media only screen and (max-device-width: 480px) {
+    div p {
+        max-width: 250px !important;
+    }
+}
+
 body {
     margin: 0;
     background-color: #f8f8f8;
@@ -67,7 +74,7 @@ body {
 
 .task_title {
     float: left;
-    max-width: 300px;
+    max-width: 500px;
     line-height: 40px;
     margin-left: 15px;
 }
