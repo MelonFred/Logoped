@@ -16,7 +16,7 @@
 
 @media only screen and (max-device-width: 480px) {
     div p {
-        width: 250px !important;
+        max-width: 250px !important;
     }
 }
 
