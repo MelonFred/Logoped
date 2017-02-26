@@ -12,17 +12,20 @@
 
 ActiveRecord::Schema.define(version: 20170222192729) do
 
-  create_table "tasks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "tasks", force: :cascade do |t|
     t.string   "title"
     t.date     "date"
-    t.text     "text",       limit: 65535
+    t.text     "text"
     t.string   "img"
     t.integer  "user_id"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "permission"
     t.string   "login"
     t.string   "password"
