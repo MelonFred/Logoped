@@ -1,7 +1,7 @@
 <div class="task_block">
 <h2>А вот и ваши задания:</h2>
 <% @user.tasks.each { |value| %>
-    <%= form_tag url_for(controller: "client_page", action: "task", id: value.id), id: "form_id" do %>
+    <%= form_tag url_for(controller: "client_page", action: "task", id: value.id), method: "get", id: "form_id" do %>
     <div class="task" id="task">
         <% if value.title.size > 40 %>
             <p class="task_title"><%= value.title[0,40] %>...</p>

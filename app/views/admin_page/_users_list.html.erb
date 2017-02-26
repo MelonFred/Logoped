@@ -4,7 +4,7 @@
     </div>         
 <% @users.each { |value| 
 if value.permission != "admin" %>
-    <%= form_tag url_for(controller: "admin_page", action: "user", id: value.id), id: "form_id" do %>
+    <%= form_tag url_for(controller: "admin_page", action: "user", id: value.id), method: "get", id: "form_id" do %>
     <div class="task" id="task">
         <p class="task_title"><%= value.fio %></p>
         <p class="task_date"><%= value.login %></p>

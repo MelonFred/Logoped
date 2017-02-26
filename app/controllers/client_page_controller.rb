@@ -5,17 +5,13 @@ class ClientPageController < ApplicationController
 
     def task
         @users = User.includes(:tasks)
-        session[:task_id] = par_task
-        redirect_to "/"
+        @current_task = Task.find(par_task)
     end
 
     def tasks_list
     end
 
     def back
-        if session[:task_id]
-            session[:task_id].clear
-        end
         redirect_to "/"
     end
 

@@ -103,13 +103,14 @@ body {
     padding: 10px;
 }
 
-#add_user_form #user_fio, #user_login, #user_password {
+#add_user_form {
+    #user_fio, #user_login, #user_password {
     height: 30px;
     width: 190px;  
     margin: 5px;
     border-radius: 2px; 
     padding: 5px 10px;     
-}
+}}
 
 .task_title {
     float: left;

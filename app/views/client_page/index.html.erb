@@ -1,24 +1,12 @@
 <div class="content">
-<% @user = @users.find(session[:user_id])
-if session[:task_id] && session[:task_id].size > 0
-    @task = @user.tasks.find(session[:task_id])
-end %>
+<% @user = @users.find(session[:user_id]) %>
 <div class="head">
-<% if session[:task_id] && session[:task_id].size > 0 %>
-    <%= link_to image_tag("back.png", :border => 0), back_path, :method => :delete, id: "back" %>
-    <%= link_to image_tag("logo.png", :border => 0), back_path, :method => :delete, id: "logo_back" %>
-<% else %>
     <%= link_to image_tag("logo.png", :border => 0), back_path, :method => :delete, id: "logo" %>
-<% end %>
     <%= link_to image_tag("logout.png", :border => 0), logout_path, :method => :delete, id: "logout" %>
 </div>
 <div class="title">
 <h2>Здравствуйте, <%= @user.fio %>!</h2>
 </div>
-<% if @task %>
-<%= render 'client_page/task' %>
-<% else %>
 <%= render 'client_page/tasks_list' %>
-<% end %>
 </div>
 
