@@ -1,22 +1,18 @@
-<% @user = @users.find(session[:user_id]) 
-if @user.permission == "admin"
-%>
+<% @user = @users.find(session[:user_id]) %>
 <div class="content">
 <div class="head">
     <%= link_to image_tag("back.png", :border => 0), "#", onclick: "history.back(1)", id: "back" %>
-    <%= link_to image_tag("logo.png", :border => 0), home_path, :method => :delete, id: "logo_back" %>
+    <%= link_to image_tag("logo.png", :border => 0), home_path, :method => :delete, id: "logo" %>
     <%= link_to image_tag("logout.png", :border => 0), logout_path, :method => :delete, id: "logout" %>
 </div>
 <div class="title">
 <h2>Здравствуйте, <%= @user.fio %>! (Администратор)</h2>
 </div>
 <div class="user_block">
-<p>ФИО: <%= @current_user.fio %>;&nbsp;&nbsp;&nbsp;Логин: <%= @current_user.login %>;&nbsp;&nbsp;&nbsp;Пароль: <%= @current_user.password %>;</p>
+<p>ФИО: <%= @current_user.fio %>&nbsp;;&nbsp;&nbsp;&nbsp;Логин: <%= @current_user.login %>&nbsp;;&nbsp;&nbsp;&nbsp;Пароль: <%= @current_user.password %>&nbsp;;</p>
 <% if @current_user.tasks.size > 0 %>
 <%= render 'client_page/tasks_list' %>
 <% else %>
 <h3>УПС... На этом месте должны быть задания, но пока что тут ничего нет =( </h3>
 <% end %>
 </div>
-<% else %>
-<% end %>

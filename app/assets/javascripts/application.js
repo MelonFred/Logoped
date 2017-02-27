@@ -16,8 +16,8 @@
 //= require_tree .
 $(document).ready(function() {
   $('form').on("click", function(event){
-   if (this.id == "login_form") return;
+   if (this.id == "form_id") {
    event.preventDefault();
-   this.submit();
+   this.submit();}
   });
 });

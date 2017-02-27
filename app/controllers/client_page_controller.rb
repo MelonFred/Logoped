@@ -1,14 +1,23 @@
 class ClientPageController < ApplicationController
     def index
-        @users = User.includes(:tasks)
+        if session[:user_id]
+           @users = User.includes(:tasks)
+        else
+            redirect_to root_path
+        end
     end
 
     def task
-        @users = User.includes(:tasks)
-        @current_task = Task.find(par_task)
+        if session[:user_id]
+            @users = User.includes(:tasks)
+            @current_task = Task.find(par_task)
+        else
+            redirect_to root_path
+        end
     end
 
     def tasks_list
+
     end
 
     private

@@ -20,11 +20,26 @@
     }
 }
 
+::-webkit-scrollbar {
+
+width: 0px;
+
+}
+
+.none {
+    cursor: default;
+    width: 80px;        
+}
+
+.none img {
+    display: none;
+}
+
 body {
     margin: 0;
     background-color: #f8f8f8;
     font-family: 'Roboto', sans-serif;
-    font-size: 1.3em
+    font-size: 1.3em;
 }
 
 h3 {
@@ -143,12 +158,6 @@ h3 {
 
 #logo {
     margin: auto;
-    padding-left: 70px;
-}
-
-#logo_back {
-    margin: auto;
-    padding-right: 10px;
 }
 
 #logout {

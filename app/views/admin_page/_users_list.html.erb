@@ -1,10 +1,10 @@
 <div class="user_block">
     <div class="add_user">
-        <%= link_to image_tag("add_user.png", :border => 0), add_user_path, id: "ass_user" %>
+        <%= link_to image_tag("add.png", :border => 0), add_user_path, id: "add_user" %>
     </div>         
 <% @users.each { |value| 
 if value.permission != "admin" %>
-    <%= form_tag url_for(controller: "admin_page", action: "user", id: value.id), method: "get", id: "form_id" do %>
+    <%= form_tag url_for(controller: "admin_page", action: "user", id: value.id), method: "get", id: "form_id", onclick: "event.preventDefault();this.submit();" do %>
     <div class="task" id="task">
         <p class="task_title"><%= value.fio %></p>
         <p class="task_date"><%= value.login %></p>

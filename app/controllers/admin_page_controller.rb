@@ -1,22 +1,39 @@
 class AdminPageController < ApplicationController
+    
     def index
-        @users = User.all
+        if session[:user_id] == 1
+            @users = User.all
+        else
+            redirect_to root_path
+        end
     end
 
     def user
-        @users = User.includes(:tasks)
-        @current_user = User.find(param_id)
+        if session[:user_id] == 1
+            @users = User.includes(:tasks)
+            @current_user = User.find(param_id)
+        else
+            redirect_to root_path
+        end
     end
 
     def add
-        @user = User.new(params_add)
-        @user.permission = "client"
-        @user.save
-        redirect_to(root_path)
+        if session[:user_id] == 1
+            @user = User.new(params_add)
+            @user.permission = "client"
+            @user.save
+            redirect_to root_path
+        else
+            redirect_to root_path
+        end
     end
 
     def add_user
-        @users = User.all
+        if session[:user_id] == 1
+            @users = User.all
+        else
+            redirect_to root_path
+        end
     end
 
     private
