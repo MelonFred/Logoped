@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   post 'home_page/login'
   
   match '/logout', :via => [:DELETE], :to => "home_page#logout"
-  match '/back', :via => [:DELETE], :to => "home_page#back"
   match '/home', :via => [:DELETE], :to => "home_page#home"
   match '/add_user', :via => [:GET], :to => "admin_page#add_user"
   match '/add', :via => [:POST], :to => "admin_page#add"

@@ -29,10 +29,6 @@ class HomePageController < ApplicationController
     redirect_to "/"
   end
 
-  def back
-    redirect_back(fallback_location: root_path)
-  end
-
   private
   def params_login
     params.require(:user).permit(:login, :password)

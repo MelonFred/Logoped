@@ -1,7 +1,8 @@
+<% if session[:user_id] 
+@user = @users.find(session[:user_id]) %>
 <div class="content">
-<% @user = @users.find(session[:user_id]) %>
 <div class="head">
-    <%= link_to image_tag("back.png", :border => 0), back_path, :method => :delete, id: "back" %>
+    <%= link_to image_tag("back.png", :border => 0), "#", onclick: "history.back(1)", id: "back" %>
     <%= link_to image_tag("logo.png", :border => 0), home_path, :method => :delete, id: "logo_back" %>
     <%= link_to image_tag("logout.png", :border => 0), logout_path, :method => :delete, id: "logout" %>
 </div>
@@ -13,3 +14,5 @@
 <p><%= @current_task.text %></p>
 </div>
 </div>
+<% else %>
+<% end %>
