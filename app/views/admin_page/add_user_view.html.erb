@@ -1,0 +1,25 @@
+<div class="content">
+<% @current_user = @users.find(session[:user_id])  %>
+<div class="head">
+    <%= link_to image_tag("back.png", :border => 0), "#", onclick: "history.back(1)", id: "back" %>
+    <%= link_to image_tag("logo.png", :border => 0), home_path, :method => :delete, id: "logo" %>
+    <%= link_to image_tag("logout.png", :border => 0), logout_path, :method => :delete, id: "logout" %>
+</div>
+<div class="title">
+<h2>Здравствуйте,
+<%= @current_user.fio %>! (Администратор)</h2>
+</div>
+<div class="user_block">
+<%= form_for :user, url: {action: "add_user"}, html: {id: "add_user_form"} do |f|%>
+    <h2>Добавить пользователя:</h2>
+    <%= label_tag("Введите ФИО") %><br>
+    <%= f.text_field(:fio) %><br>
+    <%= label_tag("Введите Логин") %><br>
+    <%= f.text_field(:login) %><br>
+    <%= label_tag("Введите Пароль") %><br>
+    <%= f.password_field(:password) %><br>
+    <%= f.submit("ДОБАВИТЬ", id: "submit") %>
+<% end %>
+</div>
+</div>
+

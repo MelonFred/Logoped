@@ -10,6 +10,9 @@
 </div>
 <div class="user_block">
 <p>ФИО: <%= @current_user.fio %>&nbsp;;&nbsp;&nbsp;&nbsp;Логин: <%= @current_user.login %>&nbsp;;&nbsp;&nbsp;&nbsp;Пароль: <%= @current_user.password %>&nbsp;;</p>
+<div class="add">
+        <%= link_to image_tag("add.png", :border => 0), add_task_view_path + "/" + @current_user.id.to_s, id: "add_task" %>
+</div>
 <% if @current_user.tasks.size > 0 %>
 <%= render 'client_page/tasks_list' %>
 <% else %>

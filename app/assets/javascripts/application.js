@@ -14,10 +14,18 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-$(document).ready(function() {
+//= require tinymce/tinymce.min
+
+$(document).on('turbolinks:load', function () {
   $('form').on("click", function(event){
    if (this.id == "form_id") {
    event.preventDefault();
    this.submit();}
+  });
+
+  tinyMCE.init({
+    mode : "textareas",
+    theme : "modern",
+    language:"ru"
   });
 });

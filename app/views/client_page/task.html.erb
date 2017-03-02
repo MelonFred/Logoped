@@ -10,6 +10,6 @@
 </div>
 <div class="task_block">
 <h2><%= @current_task.title %>:</h2>
-<p><%= @current_task.text %></p>
+<%= @current_task.text.html_safe %>
 </div>
 </div>

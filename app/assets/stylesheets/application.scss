@@ -46,6 +46,34 @@ h3 {
     color: #c9594f;
 }
 
+textarea {
+    resize: none !important; 
+    height: 400px;
+}
+
+.add_task_block {
+    color: #5e5b57;
+    width: 97%;
+    margin: auto;
+    max-width: 1200px;
+}
+
+#add_task_form input{
+    margin: 15px 0 25px 0;
+    width: 300px;
+    height: 20px;
+    padding: 5px;
+}
+
+#add_task_form #submit{
+    background-color: #4db0a5;
+    border: none;
+    color: #fff;  
+    margin: 15px auto;
+    width: 200px;
+    height: 50px;
+}
+
 .content {
     text-align: center;
     position: relative;
@@ -74,12 +102,14 @@ h3 {
     color: #5e5b57;
     width: 97%;
     margin: auto;
+    margin-bottom: 45px;
 }
 
 .task_block {
-    color: #5e5b57;
     width: 97%;
     margin: auto;
+    max-width: 800px;
+    margin-bottom: 45px;
 }
 
 .task_block h1 {
@@ -87,8 +117,13 @@ h3 {
     margin: 0;
 }
 
+.task_block * {
+    font-family: 'Roboto', sans-serif !important;
+    color: #5e5b57 !important;
+}
+
 .task {
-    max-width: 1200px;
+    max-width: 800px;
     border-radius: 5px;
     min-height: 130px;
     margin: 15px auto;
@@ -97,7 +132,7 @@ h3 {
     cursor: pointer
 }
 
-.add_user {
+.add {
     margin: 15px auto;
     text-align: center;
     width: 250px;
@@ -206,7 +241,7 @@ h3 {
     border: none;
     color: #fff;  
     margin: auto;
-    max-width: 100px; 
+    width: 100px; 
 }
 
 #login_form h2 {
