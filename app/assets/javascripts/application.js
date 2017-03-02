@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-//= require tinymce/tinymce.min
+//= require tinymce
 
 $(document).on('turbolinks:load', function () {
   $('form').on("click", function(event){
@@ -22,6 +22,4 @@ $(document).on('turbolinks:load', function () {
    event.preventDefault();
    this.submit();}
   });
-
-  
 });
