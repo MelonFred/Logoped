@@ -50,7 +50,7 @@ class AdminPageController < ApplicationController
             @task = Task.new(params_add_task)
             @task.user_id = param_id
             @task.save
-            redirect_to root_path
+            redirect_to user_path + "/" + param_id.to_s
         else
             redirect_to root_path
         end

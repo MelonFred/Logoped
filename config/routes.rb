@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   match '/home', :via => [:DELETE], :to => "home_page#home"
   match '/add_user_view', :via => [:GET], :to => "admin_page#add_user_view"
   match '/add_user', :via => [:POST], :to => "admin_page#add_user"
+  match '/user', :via => [:GET], :to => "admin_page#user"
   match '/add_task_view', :via => [:GET], :to => "admin_page#add_task_view"
   match '/add_task', :via => [:POST], :to => "admin_page#add_task"
 
