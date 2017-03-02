@@ -23,9 +23,5 @@ $(document).on('turbolinks:load', function () {
    this.submit();}
   });
 
-  tinyMCE.init({
-    mode : "textareas",
-    theme : "modern",
-    language:"ru"
-  });
+  
 });
