@@ -106,27 +106,33 @@ textarea {
 }
 
 .task_block {
+    color: #5e5b57 !important;
     width: 97%;
     margin: auto;
-    max-width: 800px;
     margin-bottom: 45px;
 }
 
-.task_block h1 {
+.task_block h2 {
     padding: 10px;
     margin: 0;
 }
 
-.task_block * {
+.task_block h1 {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.important * {
     font-family: 'Roboto', sans-serif !important;
     color: #5e5b57 !important;
+    margin: auto !important;
 }
 
 .task {
     max-width: 800px;
     border-radius: 5px;
     min-height: 130px;
-    margin: 15px auto;
+    margin: 15px auto !important;
     background: #fff;
     text-align: center;
     cursor: pointer
