@@ -1,3 +1,7 @@
-mode : "textareas"
-theme : "modern"
-language: "ru"
+toolbar:
+  - styleselect | bold italic | undo redo
+  - image | link
+plugins:
+  - image
+  - link
+<%= tinymce :mode => "textareas",:theme => "modern", :language => "ru" %>
