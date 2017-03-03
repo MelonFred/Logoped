@@ -22,4 +22,9 @@ $(document).on('turbolinks:load', function () {
    event.preventDefault();
    this.submit();}
   });
+  tinyMCE.init({
+    mode : "textareas",
+    theme : "modern",   
+    language: "ru"
+  });
 });
