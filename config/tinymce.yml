@@ -4,5 +4,3 @@ toolbar:
 plugins:
   - image
   - link
-
-<%= tinymce :mode => "textareas",:theme => "modern", :language => "ru" %>
