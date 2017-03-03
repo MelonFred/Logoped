@@ -5,5 +5,3 @@ plugins:
   - image
   - link
   - media
-  menubar:
-  - insert
