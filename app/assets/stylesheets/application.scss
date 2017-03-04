@@ -25,7 +25,6 @@
     }
 
     .important img {
-        width: 100% !important;
         max-width: 380px !important;
     }
 }
@@ -136,6 +135,11 @@ textarea {
     font-family: 'Roboto', sans-serif !important;
     color: #5e5b57 !important;
     margin: auto !important;
+}
+
+.important img {
+    width: 100% !important;
+    height: auto !important;
 }
 
 .task {
