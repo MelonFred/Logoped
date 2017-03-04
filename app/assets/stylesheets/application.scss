@@ -256,6 +256,7 @@ textarea {
 @media only screen and (max-device-width: 480px) {
     .important * {
         font-size: 0.95em !important;
+        text-indent: 0 !important;
     }
     
     .important table {
@@ -274,6 +275,5 @@ textarea {
     .important iframe {
         width: 400px;
         height: 240px;
-        text-indent: 0;
     }
 }
