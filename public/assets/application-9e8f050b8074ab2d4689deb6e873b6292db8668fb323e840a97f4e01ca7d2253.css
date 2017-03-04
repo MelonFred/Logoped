@@ -14,28 +14,35 @@
 
  */
 @media only screen and (max-device-width: 480px) {
-  /* line 19, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+  /* line 18, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
+  .important table {
+    font-size: 0.9em !important;
+    width: 97% !important;
+    margin: 0 !important;
+  }
+
+  /* line 24, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
   .task_title {
     max-width: 250px !important;
   }
 }
-/* line 24, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 29, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 ::-webkit-scrollbar {
   width: 0px;
 }
 
-/* line 30, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 35, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .none {
   cursor: default;
   width: 80px;
 }
 
-/* line 35, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 40, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .none img {
   display: none;
 }
 
-/* line 39, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 44, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 body {
   margin: 0;
   background-color: #f8f8f8;
@@ -43,18 +50,18 @@ body {
   font-size: 1.3em;
 }
 
-/* line 46, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 51, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 h3 {
   color: #c9594f;
 }
 
-/* line 50, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 55, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 textarea {
   resize: none !important;
   height: 400px;
 }
 
-/* line 55, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 60, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .add_task_block {
   color: #5e5b57;
   width: 97%;
@@ -62,7 +69,7 @@ textarea {
   max-width: 1200px;
 }
 
-/* line 62, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 67, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 #add_task_form input {
   margin: 15px 0 25px 0;
   width: 300px;
@@ -70,7 +77,7 @@ textarea {
   padding: 5px;
 }
 
-/* line 69, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 74, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 #add_task_form #submit {
   background-color: #4db0a5;
   border: none;
@@ -80,7 +87,7 @@ textarea {
   height: 50px;
 }
 
-/* line 78, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 83, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .content {
   text-align: center;
   position: relative;
@@ -88,7 +95,7 @@ textarea {
   height: 100%;
 }
 
-/* line 85, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 90, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .head {
   background-color: #4db0a5;
   color: #fff;
@@ -102,12 +109,12 @@ textarea {
   align-items: center;
 }
 
-/* line 98, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 103, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 #logo_no_out {
   margin: auto;
 }
 
-/* line 102, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 107, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .user_block {
   color: #5e5b57;
   width: 97%;
@@ -115,7 +122,7 @@ textarea {
   margin-bottom: 45px;
 }
 
-/* line 109, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 114, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .task_block {
   color: #5e5b57 !important;
   width: 97%;
@@ -123,26 +130,26 @@ textarea {
   margin-bottom: 45px;
 }
 
-/* line 116, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 121, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .task_block h2 {
   padding: 10px;
   margin: 0;
 }
 
-/* line 121, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 126, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .task_block h1 {
   padding: 10px;
   margin-bottom: 20px;
 }
 
-/* line 126, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 131, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .important * {
   font-family: 'Roboto', sans-serif !important;
   color: #5e5b57 !important;
   margin: auto !important;
 }
 
-/* line 132, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 137, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .task {
   max-width: 800px;
   border-radius: 5px;
@@ -153,7 +160,7 @@ textarea {
   cursor: pointer;
 }
 
-/* line 142, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 147, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .add {
   margin: 15px auto;
   text-align: center;
@@ -162,7 +169,7 @@ textarea {
   background-color: #fff;
 }
 
-/* line 150, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 155, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 #add_user_form {
   padding: 10px;
   background: #fff;
@@ -171,7 +178,7 @@ textarea {
   margin: 25px auto;
 }
 
-/* line 158, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 163, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 #add_user_form #submit {
   background-color: #4db0a5;
   border: none;
@@ -181,7 +188,7 @@ textarea {
   padding: 10px;
 }
 
-/* line 168, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 173, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 #add_user_form #user_fio, #add_user_form #user_login, #add_user_form #user_password {
   height: 30px;
   width: 190px;
@@ -190,7 +197,7 @@ textarea {
   padding: 5px 10px;
 }
 
-/* line 176, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 181, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .task_title {
   float: left;
   max-width: 500px;
@@ -198,57 +205,57 @@ textarea {
   margin-left: 15px;
 }
 
-/* line 183, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 188, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .task_date {
   float: right;
   line-height: 40px;
   margin-right: 15px;
 }
 
-/* line 189, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 194, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .title {
   background-color: #f0f0f0;
   min-height: 70px;
   color: #16867a;
 }
 
-/* line 195, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 200, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .title h2 {
   margin: auto;
   text-align: center;
   padding: 20px;
 }
 
-/* line 201, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 206, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 #logo {
   margin: auto;
 }
 
-/* line 205, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 210, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 #logout {
   margin-right: 20px;
   padding-left: 10px;
 }
 
-/* line 210, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 215, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 #back {
   margin-left: 20px;
   padding-right: 10px;
 }
 
-/* line 215, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 220, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 #logout img {
   max-width: 60px;
   max-height: 60px;
 }
 
-/* line 220, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 225, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .content_login {
   width: 97%;
   margin: auto;
 }
 
-/* line 225, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 230, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .login_block {
   position: relative;
   margin: 70px auto;
@@ -256,7 +263,7 @@ textarea {
   vertical-align: middle;
 }
 
-/* line 232, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 237, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .login_block input {
   max-width: 200px;
   display: block;
@@ -265,14 +272,14 @@ textarea {
   padding: 10px 20px;
 }
 
-/* line 240, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 245, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 #login_form {
   padding: 10px;
   background: #fff;
   border-radius: 5px;
 }
 
-/* line 246, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 251, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 #login_form #submit {
   background-color: #4db0a5;
   border: none;
@@ -281,7 +288,7 @@ textarea {
   width: 100px;
 }
 
-/* line 254, F:/MyProjects/1234/Logoped/app/assets/stylesheets/application.scss */
+/* line 259, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 #login_form h2 {
   text-align: center;
   color: #4db0a5;
