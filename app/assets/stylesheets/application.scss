@@ -254,14 +254,13 @@ textarea {
 }
 
 @media only screen and (max-device-width: 480px) {
+    .important * {
+        font-size: 0.95em !important;
+    }
     
     .important table {
         width: 97% !important;
         margin: 0 !important;
-    }
-
-    .important table td {
-        display: block !important;
     }
     
     .task_title {

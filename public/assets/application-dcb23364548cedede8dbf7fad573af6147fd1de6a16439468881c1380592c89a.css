@@ -288,23 +288,23 @@ textarea {
 }
 
 @media only screen and (max-device-width: 480px) {
-  /* line 259, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
+  /* line 258, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
+  .important * {
+    font-size: 0.95em !important;
+  }
+
+  /* line 262, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
   .important table {
     width: 97% !important;
     margin: 0 !important;
   }
 
-  /* line 264, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
-  .important table td {
-    display: block !important;
-  }
-
-  /* line 268, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
+  /* line 267, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
   .task_title {
     max-width: 250px !important;
   }
 
-  /* line 272, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
+  /* line 271, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
   .important img {
     max-width: 380px !important;
   }
