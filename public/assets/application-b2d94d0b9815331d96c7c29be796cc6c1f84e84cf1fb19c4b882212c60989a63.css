@@ -313,5 +313,6 @@ textarea {
   .important iframe {
     width: 400px;
     height: 240px;
+    text-indent: 0;
   }
 }
