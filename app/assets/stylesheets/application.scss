@@ -13,25 +13,6 @@
  *= require_tree .
  *= require_self
  */
-@media only screen and (max-device-width: 480px) {
-    .important * {
-        font-size: 0.9em !important;
-    }
-    
-    .important table {
-        width: 97% !important;
-        margin: 0 !important;
-    }
-    
-    .task_title {
-        max-width: 250px !important;
-    }
-
-    .important img {
-        max-width: 380px !important;
-    }
-}
-
 ::-webkit-scrollbar {
 
 width: 0px;
@@ -271,3 +252,25 @@ textarea {
     text-align: center;
     color: #4db0a5;
 }
+
+@media only screen and (max-device-width: 480px) {
+    
+    .important table {
+        width: 97% !important;
+        margin: 0 !important;
+    }
+
+    .important table td {
+        display: block !important;
+    }
+    
+    .task_title {
+        max-width: 250px !important;
+    }
+
+    .important img {
+        max-width: 380px !important;
+    }
+}
+
+@media only screen and (max-device-width: )
