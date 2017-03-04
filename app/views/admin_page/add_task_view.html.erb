@@ -1,18 +1,16 @@
 <div class="content">
-<% @current_user = @users.find(session[:user_id])  %>
+<% @current_user = @users.find(@user_id)  %>
 <div class="head">
     <%= link_to image_tag("back.png", :border => 0), "#", onclick: "history.back(1)", id: "back" %>
     <%= link_to image_tag("logo.png", :border => 0), home_path, :method => :delete, id: "logo" %>
     <%= link_to image_tag("logout.png", :border => 0), logout_path, :method => :delete, id: "logout" %>
 </div>
 <div class="title">
-<h2>Здравствуйте,
-<%= @current_user.fio %>! (Администратор)</h2>
+<h2>Добавление нового задания для: <%= @current_user.fio %></h2>
 </div>
 <div class="add_task_block">
 <%= form_for :task, url: {action: "add_task", id: @user_id}, html: {id: "add_task_form"} do |f|%>
-    <h2>Добавить задание:</h2>
-    <%= label_tag("Введите Название") %><br>
+    <h2><%= label_tag("Введите Название:") %></h2>
     <%= f.text_field(:title) %><br>
     <%= f.text_area :text, :class => "tinymce", :rows => 40, :cols => 120 %>
     <%= tinymce :mode => "textareas",:theme => "modern", :language => "ru" %>

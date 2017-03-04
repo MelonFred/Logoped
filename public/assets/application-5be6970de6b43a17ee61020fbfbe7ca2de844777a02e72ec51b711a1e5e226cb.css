@@ -58,7 +58,7 @@ textarea {
 
 /* line 55, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 #add_task_form input {
-  margin: 15px 0 25px 0;
+  margin-bottom: 25px;
   width: 300px;
   height: 20px;
   padding: 5px;
@@ -114,7 +114,7 @@ textarea {
   color: #5e5b57 !important;
   width: 90%;
   max-width: 1200px;
-  margin: 45px auto;
+  margin: 25px auto;
 }
 
 /* line 109, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
