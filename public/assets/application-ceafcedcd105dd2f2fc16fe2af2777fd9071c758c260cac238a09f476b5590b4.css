@@ -308,4 +308,10 @@ textarea {
   .important img {
     max-width: 380px !important;
   }
+
+  /* line 275, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
+  .important iframe {
+    width: 400px;
+    height: 240px;
+  }
 }
