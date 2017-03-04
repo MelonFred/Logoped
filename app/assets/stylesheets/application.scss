@@ -14,8 +14,11 @@
  *= require_self
  */
 @media only screen and (max-device-width: 480px) {
-    .important table {
+    .important * {
         font-size: 0.9em !important;
+    }
+    
+    .important table {
         width: 97% !important;
         margin: 0 !important;
     }
