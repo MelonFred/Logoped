@@ -100,9 +100,9 @@ textarea {
 
 .task_block {
     color: #5e5b57 !important;
-    width: 97%;
-    margin: auto;
-    margin-bottom: 45px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 45px auto;
 }
 
 .task_block h2 {
