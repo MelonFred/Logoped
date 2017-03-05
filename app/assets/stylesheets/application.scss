@@ -231,7 +231,7 @@ textarea {
     display: block;
     margin: auto;
     border-radius: 2px;
-    padding: 10px 20px;
+    padding: 7px 5px;
 }
 
 #login_form {
@@ -251,6 +251,28 @@ textarea {
 #login_form h2 {
     text-align: center;
     color: #4db0a5;
+}
+
+.caption {
+    font-size: 20px;
+    font-weight: bold;
+    max-width: 800px;
+    height: 60px;
+    margin: auto;
+}
+
+.caption .fio {
+    float: left;
+    display: inline-block;
+    margin-left: 50px;
+    text-decoration: underline;
+}
+
+.caption .date {
+    float: right;
+    display: inline-block;
+    margin-right: 30px;
+    text-decoration: underline;
 }
 
 @media only screen and (max-device-width: 480px) {
