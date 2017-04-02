@@ -447,16 +447,24 @@ textarea {
 /* line 395, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 #add_lesson_form li {
   list-style-type: none;
-  margin-bottom: 15px;
+  max-width: 500px;
+  margin: 15px auto;
 }
 
-/* line 400, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
+/* line 401, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
+#add_lesson_form li label {
+  display: block;
+  margin: 10px;
+  text-align: left;
+}
+
+/* line 407, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 #add_lesson_form ul {
   margin-left: 0;
   padding-left: 0;
 }
 
-/* line 405, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
+/* line 412, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 #add_lesson_form #lesson_title {
   margin-bottom: 25px;
   width: 300px;
@@ -464,7 +472,7 @@ textarea {
   padding: 5px;
 }
 
-/* line 412, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
+/* line 419, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 #add_lesson_form #submit {
   background-color: #4db0a5;
   border: none;
@@ -474,7 +482,7 @@ textarea {
   height: 50px;
 }
 
-/* line 421, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
+/* line 428, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .checkbox {
   vertical-align: top;
   margin: 0 3px 0 0;
@@ -482,24 +490,24 @@ textarea {
   height: 17px;
 }
 
-/* line 428, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
+/* line 435, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .checkbox + label {
   cursor: pointer;
 }
 
-/* line 432, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
+/* line 439, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .checkbox:not(checked) {
   position: absolute;
   opacity: 0;
 }
 
-/* line 436, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
+/* line 443, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .checkbox:not(checked) + label {
   position: relative;
   padding: 0 0 0 60px;
 }
 
-/* line 441, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
+/* line 448, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .checkbox:not(checked) + label:before {
   content: '';
   position: absolute;
@@ -512,7 +520,7 @@ textarea {
   box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.2);
 }
 
-/* line 453, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
+/* line 460, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .checkbox:not(checked) + label:after {
   content: '';
   position: absolute;
@@ -526,27 +534,27 @@ textarea {
   transition: all .2s;
 }
 
-/* line 466, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
+/* line 473, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .checkbox:checked + label:before {
   background: #72c2b9;
 }
 
-/* line 470, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
+/* line 477, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .checkbox:checked + label:after {
   left: 26px;
 }
 
-/* line 474, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
+/* line 481, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .add_user_hide {
   display: none;
 }
 
-/* line 477, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
+/* line 484, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .add_user_hide + label ~ form {
   display: none;
 }
 
-/* line 481, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
+/* line 488, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .add_user_hide + label {
   margin-top: 15px;
   padding: 10px;
@@ -557,7 +565,7 @@ textarea {
   border-radius: 4px;
 }
 
-/* line 491, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
+/* line 498, F:/MyProjects/Logoped/app/assets/stylesheets/application.scss */
 .add_user_hide:checked + label + form {
   display: block;
   padding: 10px;

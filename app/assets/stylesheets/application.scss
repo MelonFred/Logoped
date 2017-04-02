@@ -393,7 +393,14 @@ textarea {
 
 #add_lesson_form li {
     list-style-type: none;
-    margin-bottom: 15px;
+    max-width: 500px;
+    margin: 15px auto;
+}
+
+#add_lesson_form li label{
+    display: block;
+    margin: 10px;
+    text-align: left;
 }
 
 #add_lesson_form ul {
