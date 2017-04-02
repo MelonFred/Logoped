@@ -5,22 +5,17 @@
 </div>
 <div class="task_block">
 <h2>Выберите подкатегорию:</h2>
-<div class="caption">
-    <p class="fio">Название</p>
-    <p class="date">Дата</p>
-</div>
 <%
 b = Array.new() 
 @tasks.each { |value| 
     if( !b.include?(value.subcategory) ) %>
         <%= form_tag url_for(controller: "admin_page", action: "all_tasks", category: value.category, subcategory: value.subcategory), method: "get", id: "form_id" do %>
         <div class="task" id="task">
-            <% if value.subcategory.size > 35 %>
-                <p class="task_title"><%= value.subcategory[0,35] %>...</p>
+            <% if value.subcategory.size > 70 %>
+                <p class="task_title"><%= value.subcategory[0,70] %>...</p>
             <% else %>
                 <p class="task_title"><%= value.subcategory %></p>
             <% end %>
-            <p class="task_date"><%= Russian::strftime(value.created_at, "%d %B %Y") %></p>
         </div>         
         <% end 
         b.push(value.subcategory)

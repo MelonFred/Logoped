@@ -5,10 +5,6 @@
 </div>
 <div class="task_block">
 <h2>Список упражнений:</h2>
-<div class="caption">
-    <p class="fio">Название</p>
-    <p class="date">Дата</p>
-</div>
 <% @tasks.each { |value| %>
 <%= form_tag url_for(controller: "admin_page", action: "task", id: value.id), method: "get", id: "form_id" do %>
 <div class="task" id="task">
@@ -17,7 +13,6 @@
     <% else %>
         <p class="task_title"><%= value.title %></p>
     <% end %>
-    <p class="task_date"><%= Russian::strftime(value.created_at, "%d %B %Y") %></p>
 </div>         
 <% end %>
 <% } %>
