@@ -4,25 +4,29 @@
 <h2>Добавление нового упражнения:</h2>
 </div>
 <div class="add_task_block">
-<%= form_for :task, url: {action: "add_task"}, html: {id: "add_task_form"} do |f|%>
+<%= form_for :task, url: {action: "add_task"}, html: {id: "add_task_form"} do |f| %>
     <h2><%= label_tag("Введите Название:") %></h2>
     <%= f.text_field(:title) %><br>
-    <p><%= f.label :category, "*Введите Категорию:" %></p>
-    <%= f.text_field :category, list: "category" %><br>
+    <%= f.label :category, "*Введите Категорию:" %><br>
+    <%= f.text_field :category, list: "category", autocomplete: "off" %><br>
     <datalist id="category">
-        <% Task.all.each do |task|
-            if (task.category.length > 0) %>
-                <option value="<%= task.category %>"></option>
-            <% end %>
+        <% a = Array.new() 
+        Task.all.each do |task|
+            if( !a.include?(task.category) ) %>
+                <option value="<%= task.category %>"></option>    
+            <% a.push(task.category)
+            end %>
         <% end %>
     </datalist>
-    <p><%= f.label :subcategory, "*Введите Подкатегорию:" %></p>
-    <%= f.text_field :subcategory, list: "subcategory" %><br>
+    <%= f.label :subcategory, "*Введите Подкатегорию:" %><br>
+    <%= f.text_field :subcategory, list: "subcategory", autocomplete: "off" %><br>
     <datalist id="subcategory">
-        <% Task.all.each do |task|
-            if (task.subcategory.length > 0) %>
-                <option value="<%= task.subcategory %>"></option>
-            <% end %>
+        <% b = Array.new() 
+        Task.all.each do |task|
+            if( !b.include?(task.subcategory) ) %>
+                <option value="<%= task.subcategory %>"></option>    
+            <% b.push(task.subcategory)
+            end %>
         <% end %>
     </datalist>
     <%= f.text_area :text, :class => "tinymce", :rows => 40, :cols => 120 %>

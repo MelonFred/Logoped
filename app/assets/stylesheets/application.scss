@@ -14,6 +14,7 @@
  *= require_self
  */
  @media only screen and (max-device-width: 480px) {
+    
     .important * {
         font-size: 0.95em !important;
         text-indent: 0 !important;
@@ -46,6 +47,37 @@
 .none img {
     display: none;
 }
+
+.modalDialog {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: auto;
+    text-decoration: none;
+    color: #5e5b57;
+}
+
+.modalDialog:active .modalDialog:hover{
+    display: none;
+}
+
+.modalDialog > div {
+	position: relative;
+	margin: 15% auto;
+	padding: 20px 40px;
+    max-width: 230px;   
+	border-radius: 4px;
+	background: #fff;
+}
+
+
 
 body {
     margin: 0;
@@ -204,9 +236,31 @@ textarea {
     padding: 5px 10px;     
 }}
 
+.caption {
+    font-size: 20px;
+    font-weight: bold;
+    max-width: 800px;
+    height: 60px;
+    margin: auto;
+}
+
+.caption .fio {
+    float: left;
+    display: inline-block;
+    margin-left: 50px;
+    text-decoration: underline;
+}
+
+.caption .date {
+    float: right;
+    display: inline-block;
+    margin-right: 30px;
+    text-decoration: underline;
+}
+
 .task_title {
     float: left;
-    max-width: 500px;
+    max-width: 770px;
     line-height: 40px;
     margin-left: 15px;
 }
@@ -288,26 +342,18 @@ textarea {
     color: #4db0a5;
 }
 
-.caption {
-    font-size: 20px;
-    font-weight: bold;
-    max-width: 800px;
-    height: 60px;
-    margin: auto;
+#add_lesson_for_user_form #submit{
+    background-color: #4db0a5;
+    border: none;
+    color: #fff;  
+    margin: 10px auto;
+    width: 150px;
+    padding: 10px;
 }
 
-.caption .fio {
-    float: left;
-    display: inline-block;
-    margin-left: 50px;
-    text-decoration: underline;
-}
-
-.caption .date {
-    float: right;
-    display: inline-block;
-    margin-right: 30px;
-    text-decoration: underline;
+#add_lesson_for_user_form #user_lesson_user_id {
+    padding: 10px;
+    width: 250px;
 }
 
 .hide {
@@ -422,4 +468,28 @@ textarea {
 
 .checkbox:checked + label:after {
   left: 26px;
+}
+
+.add_user_hide {
+    display: none; 
+}
+.add_user_hide + label ~ form{
+    display: none;
+}
+
+.add_user_hide + label {
+    margin-top: 15px;
+    padding: 10px;
+    color: #4db0a5;
+    cursor: pointer;
+    display: inline-block; 
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.add_user_hide:checked + label + form {
+    display: block; 
+    padding: 10px; 
+    border-radius: 4px;
+    margin-top: 15px;
 }

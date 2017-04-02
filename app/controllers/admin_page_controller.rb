@@ -3,7 +3,7 @@ class AdminPageController < ApplicationController
     def index
         if (session[:user_id]) && (User.find(session[:user_id]).permission == "admin")
         else
-            redirect_to root_path
+            redirect_to root_path, notice: "Вам сюда низя!"
         end
     end
 
@@ -11,7 +11,7 @@ class AdminPageController < ApplicationController
         if (session[:user_id]) && (User.find(session[:user_id]).permission == "admin")
             @tasks = Task.where(subcategory: param_subcategory, category: param_category)
         else
-            redirect_to root_path
+            redirect_to root_path, notice: "Вам сюда низя!"
         end
     end
 
@@ -19,7 +19,7 @@ class AdminPageController < ApplicationController
         if (session[:user_id]) && (User.find(session[:user_id]).permission == "admin")
             @lessons = Lesson.all
         else
-            redirect_to root_path
+            redirect_to root_path, notice: "Вам сюда низя!"
         end
     end
 
@@ -27,16 +27,16 @@ class AdminPageController < ApplicationController
         if (session[:user_id]) && (User.find(session[:user_id]).permission == "admin")
             @users = User.all
         else
-            redirect_to root_path
+            redirect_to root_path, notice: "Вам сюда низя!"
         end
     end
 
     def user
         if (session[:user_id]) && (User.find(session[:user_id]).permission == "admin")
-            @users = User.includes(:tasks)
             @current_user = User.find(param_id)
+            @user_lesson = UserLesson.where(user_id: param_id)
         else
-            redirect_to root_path
+            redirect_to root_path, notice: "Вам сюда низя!"
         end
     end
 
@@ -44,10 +44,13 @@ class AdminPageController < ApplicationController
         if (session[:user_id]) && (User.find(session[:user_id]).permission == "admin") 
             @user = User.new(params_add_user)
             @user.permission = "client"
-            @user.save
-            redirect_to root_path
+            if (@user.save)         
+                redirect_to root_path, notice: "Пользователь успешно добавлен!"
+            else
+                redirect_to root_path, notice: "Что то пошло не так, попробуйте еще раз!"
+            end
         else
-            redirect_to root_path
+            redirect_to root_path, notice: "Вам сюда низя!"
         end
     end
 
@@ -55,7 +58,7 @@ class AdminPageController < ApplicationController
         if (session[:user_id]) && (User.find(session[:user_id]).permission == "admin")
             @users = User.all
         else
-            redirect_to root_path
+            redirect_to root_path, notice: "Вам сюда низя!"
         end
     end
 
@@ -63,7 +66,7 @@ class AdminPageController < ApplicationController
         if (session[:user_id]) && (User.find(session[:user_id]).permission == "admin")
             @tasks = Task.all
         else
-            redirect_to root_path
+            redirect_to root_path, notice: "Вам сюда низя!"
         end
     end
 
@@ -71,7 +74,7 @@ class AdminPageController < ApplicationController
         if (session[:user_id]) && (User.find(session[:user_id]).permission == "admin")
             @tasks = Task.where(category: param_category)
         else
-            redirect_to root_path
+            redirect_to root_path, notice: "Вам сюда низя!"
         end
     end
 
@@ -80,33 +83,38 @@ class AdminPageController < ApplicationController
             @users = User.all
             @current_task = Task.find(param_id)
         else
-            redirect_to root_path
+            redirect_to root_path, notice: "Вам сюда низя!"
         end
     end
 
     def add_task
         if (session[:user_id]) && (User.find(session[:user_id]).permission == "admin")
             @task = Task.new(params_add_task)
-            @task.save
-            redirect_to root_path
+            if (@task.save)         
+                redirect_to root_path, notice: "Упражнение успешно сохранено!"
+            else
+                redirect_to root_path, notice: "Что то пошло не так, попробуйте еще раз!"
+            end
         else
-            redirect_to root_path
+            redirect_to root_path, notice: "Вам сюда низя!"
         end
     end
 
     def add_task_view
         if (session[:user_id]) && (User.find(session[:user_id]).permission == "admin")
         else
-            redirect_to root_path
+            redirect_to root_path, notice: "Вам сюда низя!"
         end
     end
 
     def lesson
         if (session[:user_id]) && (User.find(session[:user_id]).permission == "admin")
+            @users = User.all
+            @lesson_id = param_id
             @current_lesson = Lesson.find(param_id)
             @tasks = Task.find(@current_lesson.tasks_id)
         else
-            redirect_to root_path
+            redirect_to root_path, notice: "Вам сюда низя!"
         end
     end
 
@@ -114,10 +122,13 @@ class AdminPageController < ApplicationController
         if (session[:user_id]) && (User.find(session[:user_id]).permission == "admin")
             @lesson = Lesson.new(params_add_lesson)
             @lesson.tasks_id = param_tasks;
-            @lesson.save
-            redirect_to root_path
+            if (@lesson.save)         
+                redirect_to root_path, notice: "Занятие успешно сохранено!"
+            else
+                redirect_to root_path, notice: "Что то пошло не так, попробуйте еще раз!"
+            end
         else
-            redirect_to root_path
+            redirect_to root_path, notice: "Вам сюда низя!"
         end
     end
 
@@ -125,7 +136,21 @@ class AdminPageController < ApplicationController
         if (session[:user_id]) && (User.find(session[:user_id]).permission == "admin")
             @tasks = Task.all
         else
-            redirect_to root_path
+            redirect_to root_path, notice: "Вам сюда низя!"
+        end
+    end
+
+    def add_lesson_for_user
+        if (session[:user_id]) && (User.find(session[:user_id]).permission == "admin")
+            @user_lesson = UserLesson.new(params_add_lesson_for_user)
+            @user_lesson.lesson_id = param_id
+            if (@user_lesson.save)         
+                redirect_to root_path, notice: "Занятие назначено клиенту!"
+            else
+                redirect_to root_path, notice: "Что то пошло не так, попробуйте еще раз!"
+            end
+        else
+            redirect_to root_path, notice: "Вам сюда низя!"
         end
     end
 
@@ -156,5 +181,9 @@ class AdminPageController < ApplicationController
 
     def param_subcategory
         params[:subcategory]
+    end
+
+    def params_add_lesson_for_user
+        params.require(:user_lesson).permit(:user_id)
     end
 end

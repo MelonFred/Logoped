@@ -1,16 +1,28 @@
-<% @user = @users.find(session[:user_id]) %>
 <div class="content">
 <%= render 'admin_page/head' %>
 <div class="title">
 <h2>ФИО: <%= @current_user.fio %>&nbsp;;&nbsp;&nbsp;&nbsp;Логин: <%= @current_user.login %>&nbsp;;&nbsp;&nbsp;&nbsp;Пароль: <%= @current_user.password %>&nbsp;;</h2>
 </div>
 <div class="user_block">
-<div class="add">
-    <%= link_to image_tag("add.png", :border => 0), add_task_view_path + "/" + @current_user.id.to_s, id: "add_task" %>
+<% if (@user_lesson.size > 0) %>
+<div class="task_block">
+<h2>Список занятий:</h2>
+<% @user_lesson.each { |value| 
+@lesson = Lesson.find(value.lesson_id) %>
+<%= form_tag url_for(controller: "admin_page", action: "lesson", id: @lesson.id), method: "get", id: "form_id" do %>
+<div class="task" id="task">
+    <% if (@lesson.title) %>
+        <% if (@lesson.title.length > 100) %>
+            <p class="task_title"><%= @lesson.title[0,100] %>...</p>
+        <% else %>
+            <p class="task_title"><%= @lesson.title %></p>
+        <% end %>
+    <% end %>
+</div>         
+<% end %>
+<% } %>
 </div>
-<% if @current_user.tasks.size > 0 %>
-<%= render 'client_page/tasks_list' %>
 <% else %>
-<h3>УПС... На этом месте должны быть задания, но пока что тут ничего нет =( </h3>
+<h3>УПС... На этом месте должны быть занятие, но пока что тут ничего нет =( </h3>
 <% end %>
 </div>

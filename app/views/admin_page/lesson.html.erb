@@ -1,8 +1,18 @@
 <div class="content">
 <%= render 'admin_page/head' %>
-<div>
-    <p>Добавить это задание пользователю:</p>
-</div>
+<input type="checkbox" id="add_for_user" class="add_user_hide"/>
+<label for="add_for_user" >Добавить это занятие клиенту</label>
+<%= form_for :user_lesson, url: {action: "add_lesson_for_user", id: @lesson_id}, html: {id: "add_lesson_for_user_form"} do |f| %>
+    <%= f.text_field :user_id, list: "users", autocomplete: "off" %><br>
+    <datalist id="users">
+        <% @users.each { |value| %>
+            <% if(value.permission != "admin") %>
+                <option label='<%= value.fio %>' value='<%= value.id %>'></option>
+            <% end %>
+        <% } %>
+    </datalist>
+    <%= f.submit("ДОБАВИТЬ", id: "submit") %>
+<% end %>
 <div class="task_block">
 <h2>Список упражнений:</h2>
 <% @tasks.each { |value| %>

@@ -13,20 +13,18 @@ class HomePageController < ApplicationController
   end
 
   def login
-    @current_user = User.where("login = ? AND password = ?", params_login[:login], params_login[:password])
-    @current_user.each { |value| 
-      session[:user_id] = value.id  
-    }
-    redirect_to root_path
+    @current_user = User.find_by("login = ? AND password = ?", params_login[:login], params_login[:password])
+    if(@current_user)
+      session[:user_id] = @current_user.id  
+      redirect_to root_path
+    else
+      redirect_to root_path, notice: "Не правильно введен логин или пароль!"
+    end
   end
 
   def logout
     session.clear
     redirect_to root_path
-  end
-
-  def home
-    redirect_to "/"
   end
 
   private

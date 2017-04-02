@@ -1,20 +1,16 @@
 <div class="task_block">
-<h2>Список заданий:</h2>
-<div class="caption">
-        <p class="fio">Название</p>
-        <p class="date">Дата</p>
-</div>
-<% @user_lessons.each { |value| 
-    if(@user_lessons.user_id == @current_user.id)
+<h2>Список Ваших занятий:</h2>
+<% 
+@lessons.each { |value| 
+@lesson = Lesson.find(value.lesson_id)
 %>
-    <%= form_tag url_for(controller: "client_page", action: "lesson", id: value.id), method: "get", id: "form_id" do %>
+    <%= form_tag url_for(controller: "client_page", action: "user_lesson", id: @lesson.id), method: "get", id: "form_id" do %>
     <div class="task" id="task">
-        <% if value.title.size > 40 %>
-            <p class="task_title"><%= value.title[0,40] %>...</p>
+        <% if @lesson.title.size > 100 %>
+            <p class="task_title"><%= @lesson.title[0,100] %>...</p>
         <% else %>
-            <p class="task_title"><%= value.title %></p>
+            <p class="task_title"><%= @lesson.title %></p>
         <% end %>
-        <p class="task_date"><%= Russian::strftime(value.created_at, "%d %B %Y") %></p>
     </div>         
     <% end %>
 <% } %>

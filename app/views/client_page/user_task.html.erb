@@ -1,0 +1,10 @@
+<div class="content">
+<%= render 'admin_page/head' %>
+<div class="title">
+<h2>
+<%= @current_task.title %></h2>
+</div>
+<div class="task_block important">
+<%= @current_task.text.html_safe %>
+</div>
+</div>

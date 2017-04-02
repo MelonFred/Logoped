@@ -1,0 +1,17 @@
+<div class="content">
+<%= render 'admin_page/head' %>
+<div class="task_block">
+<h2>Список упражнений:</h2>
+<% @tasks.each { |value| %>
+    <%= form_tag url_for(controller: "client_page", action: "user_task", id: value.id), method: "get", id: "form_id" do %>
+    <div class="task" id="task">
+        <% if value.title.size > 100 %>
+            <p class="task_title"><%= value.title[0,100] %>...</p>
+        <% else %>
+            <p class="task_title"><%= value.title %></p>
+        <% end %>
+    </div> 
+    <% end %>        
+<% } %>
+</div>
+</div>

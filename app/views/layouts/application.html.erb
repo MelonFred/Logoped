@@ -10,6 +10,9 @@
   </head>
 
   <body>
+    <% flash.each do |name, msg| -%>
+      <a href="" class="modalDialog"><%= content_tag :div, msg, class: name %></a>
+    <% end %>
     <%= yield %>
   </body>
 </html>
