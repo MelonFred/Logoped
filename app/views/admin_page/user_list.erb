@@ -1,9 +1,5 @@
 <div class="content">
-<div class="head">
-    <%= link_to image_tag("back.png", :border => 0), "#", onclick: "history.back(1)", id: "back" %>
-    <%= link_to image_tag("logo.png", :border => 0), home_path, :method => :delete, id: "logo" %>
-    <%= link_to image_tag("logout.png", :border => 0), logout_path, :method => :delete, id: "logout" %>
-</div>
+<%= render 'admin_page/head' %>
 <div class="add">
     <%= link_to image_tag("add.png", :border => 0), add_user_view_path, id: "add_user" %>
 </div>

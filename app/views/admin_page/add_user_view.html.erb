@@ -1,10 +1,6 @@
 <div class="content">
 <% @current_user = @users.find(session[:user_id])  %>
-<div class="head">
-    <%= link_to image_tag("back.png", :border => 0), "#", onclick: "history.back(1)", id: "back" %>
-    <%= link_to image_tag("logo.png", :border => 0), home_path, :method => :delete, id: "logo" %>
-    <%= link_to image_tag("logout.png", :border => 0), logout_path, :method => :delete, id: "logout" %>
-</div>
+<%= render 'admin_page/head' %>
 <div class="title">
 <h2>Добавление нового пользователя</h2>
 </div>
