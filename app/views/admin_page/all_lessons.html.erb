@@ -9,8 +9,8 @@
 <%= form_tag url_for(controller: "admin_page", action: "lesson", id: value.id), method: "get", id: "form_id" do %>
 <div class="task" id="task">
     <% if(value.title) %>
-        <% if value.title.size > 70 %>
-            <p class="task_title"><%= value.title[0,70] %>...</p>
+        <% if value.title.size > 100 %>
+            <p class="task_title"><%= value.title[0,100] %>...</p>
         <% else %>
             <p class="task_title"><%= value.title %></p>
         <% end %>

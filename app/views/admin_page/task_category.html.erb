@@ -11,8 +11,8 @@ a = Array.new()
     if( !a.include?(value.category) ) %>
         <%= form_tag url_for(controller: "admin_page", action: "task_subcategory", category: value.category), method: "get", id: "form_id" do %>
         <div class="task" id="task">
-            <% if value.category.size > 50 %>
-                <p class="task_title"><%= value.category[0,50] %>...</p>
+            <% if value.category.size > 100 %>
+                <p class="task_title"><%= value.category[0,100] %>...</p>
             <% else %>
                 <p class="task_title"><%= value.category %></p>
             <% end %>
