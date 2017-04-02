@@ -1,0 +1,30 @@
+<div class="content">
+<div class="head">
+    <%= link_to image_tag("back.png", :border => 0), "#", onclick: "history.back(1)", id: "back" %>
+    <%= link_to image_tag("logo.png", :border => 0), home_path, :method => :delete, id: "logo" %>
+    <%= link_to image_tag("logout.png", :border => 0), logout_path, :method => :delete, id: "logout" %>
+</div>
+<div>
+    <p>Добавить это задание пользователю:</p>
+</div>
+<div class="task_block">
+<h2>Список упражнений:</h2>
+<div class="caption">
+    <p class="fio">Название</p>
+    <p class="date">Дата</p>
+</div>
+<% @tasks.each { |value| %>
+<%= form_tag url_for(controller: "admin_page", action: "task", id: value.id), method: "get", id: "form_id" do %>
+<div class="task" id="task">
+    <% if(value.title) %>
+        <% if value.title.size > 40 %>
+            <p class="task_title"><%= value.title[0,40] %>...</p>
+        <% else %>
+            <p class="task_title"><%= value.title %></p>
+        <% end %>
+    <% end %>
+    <p class="task_date"><%= Russian::strftime(value.created_at, "%d %B %Y") %></p>
+</div>         
+<% end %>
+<% } %>
+</div>

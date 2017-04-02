@@ -13,6 +13,30 @@
  *= require_tree .
  *= require_self
  */
+ @media only screen and (max-device-width: 480px) {
+    .important * {
+        font-size: 0.95em !important;
+        text-indent: 0 !important;
+    }
+    
+    .important table {
+        width: 97% !important;
+        margin: 0 !important;
+    }
+    
+    .task_title {
+        max-width: 250px !important;
+    }
+
+    .important img {
+        max-width: 380px !important;
+    }
+
+    .important iframe {
+        width: 400px;
+        height: 240px;
+    }
+}
 ::-webkit-scrollbar {
 
 width: 0px;
@@ -33,6 +57,7 @@ body {
     background-color: #f8f8f8;
     font-family: 'Roboto', sans-serif;
     font-size: 1.3em;
+    color: #5e5b57;
 }
 
 h3 {
@@ -51,6 +76,10 @@ textarea {
     max-width: 1200px;
 }
 
+.add_task_block h2 {
+    font-size: 25px;
+}
+
 #add_task_form input{
     margin-bottom: 25px;
     width: 300px;
@@ -65,6 +94,16 @@ textarea {
     margin: 15px auto;
     width: 200px;
     height: 50px;
+}
+
+#add_lesson_form {
+    margin-bottom: 25px;
+    padding: 5px;
+    color: #5e5b57;
+}
+
+#add_lesson_form h2 {
+    font-size: 25px;
 }
 
 .content {
@@ -193,6 +232,7 @@ textarea {
     margin: auto;
     text-align: center;
     padding: 20px;
+    font-size: 20px;
 }
 
 #logo {
@@ -275,27 +315,115 @@ textarea {
     text-decoration: underline;
 }
 
-@media only screen and (max-device-width: 480px) {
-    .important * {
-        font-size: 0.95em !important;
-        text-indent: 0 !important;
-    }
-    
-    .important table {
-        width: 97% !important;
-        margin: 0 !important;
-    }
-    
-    .task_title {
-        max-width: 250px !important;
-    }
+.hide {
+    display: none; 
+}
+.hide + label ~ div{
+    display: none;
+}
 
-    .important img {
-        max-width: 380px !important;
-    }
+.hide + label {
+    border-bottom: 1px dotted #4db0a5;
+    padding: 0;
+    color: #4db0a5;
+    cursor: pointer;
+    display: inline-block; 
+}
 
-    .important iframe {
-        width: 400px;
-        height: 240px;
-    }
+.hide:checked + label {
+    color: #16867a;
+    border-bottom: 0;
+    border: 1px solid;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.hide:checked + label + div {
+    display: block; 
+    background: #f0f0f0;
+    -moz-box-shadow: inset 3px 3px 30px #d6d6d6;
+    -webkit-box-shadow: inset 3px 3px 30px #d6d6d6;
+    box-shadow: inset 3px 3px 30px #d6d6d6;
+    padding: 10px; 
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+#add_lesson_form li {
+    list-style-type: none;
+    margin-bottom: 15px;
+}
+
+#add_lesson_form ul {
+    margin-left: 0; 
+    padding-left: 0; 
+}
+
+#add_lesson_form #lesson_title{
+    margin-bottom: 25px;
+    width: 300px;
+    height: 20px;
+    padding: 5px;
+}
+
+#add_lesson_form #submit{
+    background-color: #4db0a5;
+    border: none;
+    color: #fff;  
+    margin: 15px auto;
+    width: 200px;
+    height: 50px;
+}
+
+.checkbox {
+  vertical-align: top;
+  margin: 0 3px 0 0;
+  width: 17px;
+  height: 17px;
+}
+
+.checkbox + label {
+  cursor: pointer;
+}
+
+.checkbox:not(checked) {
+  position: absolute;
+  opacity: 0;
+}
+.checkbox:not(checked) + label {
+  position: relative; 
+  padding: 0 0 0 60px; 
+}
+
+.checkbox:not(checked) + label:before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 50px;
+  height: 26px;
+  border-radius: 13px;
+  background: #CDD1DA;
+  box-shadow: inset 0 2px 3px rgba(0,0,0,.2);
+}
+
+.checkbox:not(checked) + label:after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 10px;
+  background: #FFF;
+  box-shadow: 0 2px 5px rgba(0,0,0,.3);
+  transition: all .2s; 
+}
+
+.checkbox:checked + label:before {
+  background: #72c2b9;
+}
+
+.checkbox:checked + label:after {
+  left: 26px;
 }

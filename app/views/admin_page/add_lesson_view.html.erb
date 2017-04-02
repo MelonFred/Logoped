@@ -1,0 +1,54 @@
+<div class="content">
+<div class="head">
+    <%= link_to image_tag("back.png", :border => 0), "#", onclick: "history.back(1)", id: "back" %>
+    <%= link_to image_tag("logo.png", :border => 0), home_path, :method => :delete, id: "logo" %>
+    <%= link_to image_tag("logout.png", :border => 0), logout_path, :method => :delete, id: "logout" %>
+</div>
+<div class="title">
+<h2>Добавление нового занятия:</h2>
+</div>
+<% if (@tasks.size > 0) %>
+    <%= form_for :lesson, url: {action: "add_lesson"}, html: {id: "add_lesson_form"} do |f|%>
+        <h2><%= label_tag("Введите название занятия:") %></h2>
+        <%= f.text_field(:title) %><br>
+        <%
+        a = Array.new() 
+        @tasks.each { |value| 
+            if( !a.include?(value.category) ) %>
+
+                <input type="checkbox" id=category<%= value.id %> class="hide"/>
+                <label for=category<%= value.id %> ><%= value.category %></label>
+                <div>
+                
+                <% b = Array.new() 
+                Task.where(category: value.category).each { |value2| %>
+                <% if( !b.include?(value2.subcategory) ) %>
+                    <input type="checkbox" id=subcategory<%= value2.id %> class="hide"/>
+                    <label for=subcategory<%= value2.id %> ><%= value2.subcategory %></label>
+                    <div>
+                        <ul>
+                        <% Task.where(category: value.category, subcategory: value2.subcategory).each { |value3| %> 
+                            <li><%= check_box_tag 'tasks_id[]', value3.id, false, class: 'checkbox', id: value3.id %>
+                                <label for=<%= value3.id %> ><%= value3.title %></label>
+                            </li>  
+                        <% } %>
+                        </ul>
+                    </div>
+                    <br/>
+                    <br/>
+                <% b.push(value.subcategory) 
+                end }%>
+                </div>
+                <br/>
+                <br/>
+
+                <%
+            a.push(value.category)
+            end 
+        } %>
+        <%= f.submit("ДОБАВИТЬ", id: "submit") %>
+    <% end %> 
+<% else %>
+    <h3>Сначала добавьте упражнения!</h3>
+<% end %>
+</div>

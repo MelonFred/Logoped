@@ -9,12 +9,22 @@ Rails.application.routes.draw do
   match '/add_user_view', :via => [:GET], :to => "admin_page#add_user_view"
   match '/add_user', :via => [:POST], :to => "admin_page#add_user"
   match '/user', :via => [:GET], :to => "admin_page#user"
+  match '/user_list', :via => [:GET], :to => "admin_page#user_list"
+  match '/all_tasks', :via => [:GET], :to => "admin_page#all_tasks"
+  match '/task_category', :via => [:GET], :to => "admin_page#task_category"
+  match '/task_subcategory', :via => [:GET], :to => "admin_page#task_subcategory"
+  match '/all_lessons', :via => [:GET], :to => "admin_page#all_lessons"
   match '/add_task_view', :via => [:GET], :to => "admin_page#add_task_view"
+  match '/add_lesson_view', :via => [:GET], :to => "admin_page#add_lesson_view"
   match '/add_task', :via => [:POST], :to => "admin_page#add_task"
+  match '/add_lesson', :via => [:POST], :to => "admin_page#add_lesson"
 
   get '/user/:id', to: 'admin_page#user'  
-  get '/task/:id', to: 'client_page#task' 
-  get '/add_task_view/:id', to: 'admin_page#add_task_view'  
+  get '/task/:id', to: 'admin_page#task' 
+  get '/lesson/:id', to: 'admin_page#lesson'
+  get '/add_task_view/:id', to: 'admin_page#add_task_view'
+  get '/task_subcategory/:category', to: 'admin_page#task_subcategory' 
+  get '/all_tasks/:category/:subcategory', to: 'admin_page#all_tasks' 
 
   root to: "home_page#index"
 

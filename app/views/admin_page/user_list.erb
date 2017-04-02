@@ -1,0 +1,27 @@
+<div class="content">
+<div class="head">
+    <%= link_to image_tag("back.png", :border => 0), "#", onclick: "history.back(1)", id: "back" %>
+    <%= link_to image_tag("logo.png", :border => 0), home_path, :method => :delete, id: "logo" %>
+    <%= link_to image_tag("logout.png", :border => 0), logout_path, :method => :delete, id: "logout" %>
+</div>
+<div class="add">
+    <%= link_to image_tag("add.png", :border => 0), add_user_view_path, id: "add_user" %>
+</div>
+<div class="user_block">
+<h2>Список пользователей:</h2>
+<div class="caption">
+    <p class="fio">ФИО</p>
+    <p class="date">Логин</p>
+</div>         
+<% @users.each { |value| 
+if value.permission != "admin" %>
+    <%= form_tag url_for(controller: "admin_page", action: "user", id: value.id), method: "get", id: "form_id" do %>
+    <div class="task" id="task">
+        <p class="task_title"><%= value.fio %></p>
+        <p class="task_date"><%= value.login %></p>
+    </div>         
+    <% end %>
+<% end %>    
+<% } %>
+</div>
+</div>

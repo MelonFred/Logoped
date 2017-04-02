@@ -1,0 +1,30 @@
+<div class="content">
+<div class="head">
+    <%= link_to image_tag("back.png", :border => 0), "#", onclick: "history.back(1)", id: "back" %>
+    <%= link_to image_tag("logo.png", :border => 0), home_path, :method => :delete, id: "logo" %>
+    <%= link_to image_tag("logout.png", :border => 0), logout_path, :method => :delete, id: "logout" %>
+</div>
+<div class="add">
+    <%= link_to image_tag("add.png", :border => 0), add_task_view_path, id: "add_task" %>
+</div>
+<div class="task_block">
+<h2>Выберите категорию:</h2>
+<div class="caption">
+    <p class="fio">Название</p>
+    <p class="date">Дата</p>
+</div>
+<%
+a = Array.new() 
+@tasks.each { |value| 
+    if( !a.include?(value.category) ) %>
+        <%= form_tag url_for(controller: "admin_page", action: "task_subcategory", category: value.category), method: "get", id: "form_id" do %>
+        <div class="task" id="task">
+            <p class="task_title"><%= value.category %>...</p>
+            <p class="task_date"><%= Russian::strftime(value.created_at, "%d %B %Y") %></p>
+        </div>         
+        <% end 
+        a.push(value.category)
+    end 
+} %>
+</div>
+</div>

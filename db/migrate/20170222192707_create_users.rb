@@ -6,7 +6,6 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :login
       t.string :password
       t.string :fio
-      t.string :tasks
 
       t.timestamps
     end

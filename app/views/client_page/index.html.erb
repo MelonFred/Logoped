@@ -8,8 +8,8 @@
 <div class="title">
 <h2>Здравствуйте, <%= @current_user.fio %>!</h2>
 </div>
-<% if @current_user.tasks.size > 0 %>
-<%= render 'client_page/tasks_list' %>
+<% if (@user_lessons && (@user_lessons.find_by user_id: session[:user_id])) %>
+<%= render 'client_page/lessons_list' %>
 <% else %>
 <h3>УПС... На этом месте должны быть Ваши задания, но пока что тут ничего нет =( </h3>
 <% end %>

@@ -1,0 +1,16 @@
+<div class="user_block">
+    <%= form_tag url_for(controller: "admin_page", action: "all_lessons"), method: "get", id: "form_id" do %>
+    <div class="task" id="task">
+        <p class="task_title">Занятия</p>
+    </div>        
+    <% end %>
+    <%= form_tag url_for(controller: "admin_page", action: "task_category"), method: "get", id: "form_id" do %>
+    <div class="task" id="task">
+        <p class="task_title">Упражнения</p>
+    </div>     
+    <% end %><%= form_tag url_for(controller: "admin_page", action: "user_list"), method: "get", id: "form_id" do %>
+    <div class="task" id="task">
+        <p class="task_title">Клиенты</p>
+    </div>      
+    <% end %>     
+</div>

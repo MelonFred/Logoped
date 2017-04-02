@@ -1,7 +1,7 @@
 class HomePageController < ApplicationController
 
   def index
-    @users = User.includes(:tasks)
+    @users = User.all
     if session[:user_id]
       per = @users.find(session[:user_id]).permission
       if per == "admin"
