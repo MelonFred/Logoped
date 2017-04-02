@@ -7,7 +7,6 @@
 <h2>Выберите категорию:</h2>
 <div class="caption">
     <p class="fio">Название</p>
-    <p class="date">Дата</p>
 </div>
 <%
 a = Array.new() 
@@ -15,8 +14,11 @@ a = Array.new()
     if( !a.include?(value.category) ) %>
         <%= form_tag url_for(controller: "admin_page", action: "task_subcategory", category: value.category), method: "get", id: "form_id" do %>
         <div class="task" id="task">
-            <p class="task_title"><%= value.category %>...</p>
-            <p class="task_date"><%= Russian::strftime(value.created_at, "%d %B %Y") %></p>
+            <% if value.category.size > 50 %>
+                <p class="task_title"><%= value.category[0,50] %>...</p>
+            <% else %>
+                <p class="task_title"><%= value.category %></p>
+            <% end %>
         </div>         
         <% end 
         a.push(value.category)

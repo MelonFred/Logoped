@@ -12,8 +12,8 @@
 <% @tasks.each { |value| %>
 <%= form_tag url_for(controller: "admin_page", action: "task", id: value.id), method: "get", id: "form_id" do %>
 <div class="task" id="task">
-    <% if value.title.size > 40 %>
-        <p class="task_title"><%= value.title[0,40] %>...</p>
+    <% if value.title.size > 35 %>
+        <p class="task_title"><%= value.title[0,35] %>...</p>
     <% else %>
         <p class="task_title"><%= value.title %></p>
     <% end %>
